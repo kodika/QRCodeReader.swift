@@ -27,22 +27,21 @@
 import UIKit
 
 /// The toggle torch button.
-@IBDesignable
 public final class ToggleTorchButton: UIButton {
-  @IBInspectable var edgeColor: UIColor = UIColor.white {
+  var edgeColor: UIColor = UIColor.white {
     didSet {
       setNeedsDisplay()
     }
   }
 
-  @IBInspectable var fillColor: UIColor = UIColor.lightGray {
+  var fillColor: UIColor = UIColor.lightGray {
     didSet {
       setNeedsDisplay()
     }
   }
 
-  @IBInspectable var edgeHighlightedColor: UIColor = UIColor.white
-  @IBInspectable var fillHighlightedColor: UIColor = UIColor.darkGray
+  var edgeHighlightedColor: UIColor = UIColor.white
+  var fillHighlightedColor: UIColor = UIColor.darkGray
 
   public override func draw(_ rect: CGRect) {
     // Colors
@@ -119,7 +118,7 @@ public final class ToggleTorchButton: UIButton {
 
   public override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
     super.touchesCancelled(touches!, with: event)
-    
+
     setNeedsDisplay()
   }
 }
