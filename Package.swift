@@ -1,10 +1,10 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
   name: "QRCodeReader",
   platforms: [
-    .iOS(SupportedPlatform.IOSVersion.v12),
+    .iOS(SupportedPlatform.IOSVersion.v14),
     .macOS(SupportedPlatform.MacOSVersion.v10_14)
   ],
   products: [
