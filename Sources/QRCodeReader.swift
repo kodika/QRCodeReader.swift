@@ -27,12 +27,14 @@
 import UIKit
 import AVFoundation
 
+@available(iOS 4.0, macCatalyst 14.0, *)
 protocol QRCodeReaderLifeCycleDelegate: class {
   func readerDidStartScanning()
   func readerDidStopScanning()
 }
 
 /// Reader object base on the `AVCaptureDevice` to read / scan 1D and 2D codes.
+@available(iOS 4.0, macCatalyst 14.0, *)
 public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegate {
   private let sessionQueue         = DispatchQueue(label: "session queue")
   private let metadataObjectsQueue = DispatchQueue(label: "com.yannickloriot.qr", attributes: [], target: nil)

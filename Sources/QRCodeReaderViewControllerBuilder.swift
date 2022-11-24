@@ -31,6 +31,7 @@ import UIKit
  The QRCodeViewControllerBuilder aims to create a simple configuration object for
  the QRCode view controller.
  */
+@available(iOS 4.0, macCatalyst 14.0, *)
 public final class QRCodeReaderViewControllerBuilder {
   // MARK: - Configuring the QRCodeViewController Objects
 
@@ -114,12 +115,14 @@ public final class QRCodeReaderViewControllerBuilder {
   */
   public var rectOfInterest: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1) {
     didSet {
-      reader.metadataOutput.rectOfInterest = CGRect(
-        x: min(max(rectOfInterest.origin.x, 0), 1),
-        y: min(max(rectOfInterest.origin.y, 0), 1),
-        width: min(max(rectOfInterest.width, 0), 1),
-        height: min(max(rectOfInterest.height, 0), 1)
-      )
+        if #available(iOS 4, macCatalyst 14.0, *) {
+            reader.metadataOutput.rectOfInterest = CGRect(
+                x: min(max(rectOfInterest.origin.x, 0), 1),
+                y: min(max(rectOfInterest.origin.y, 0), 1),
+                width: min(max(rectOfInterest.width, 0), 1),
+                height: min(max(rectOfInterest.height, 0), 1)
+            )
+        }
     }
   }
 
