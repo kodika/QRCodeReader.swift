@@ -26,6 +26,7 @@
 
 import UIKit
 
+@available(iOS 4.0, macCatalyst 14.0, *)
 final public class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
   public lazy var overlayView: QRCodeReaderViewOverlay? = {
     let ov = ReaderOverlayView()
@@ -194,6 +195,7 @@ final public class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
   }
 }
 
+@available(iOS 4.0, macCatalyst 14.0, *)
 extension QRCodeReaderView: QRCodeReaderLifeCycleDelegate {
   func readerDidStartScanning() {
     setNeedsUpdateOrientation()

@@ -29,6 +29,7 @@ import Foundation
 /**
  The result of the scan with its content value and the corresponding metadata type.
  */
+@available(iOS 4.0, macCatalyst 14.0, *)
 public struct QRCodeReaderResult {
   /**
    The error corrected data decoded into a human-readable string.
